@@ -80,6 +80,7 @@
                  <li><a href="#viewstats" title="{BUTTON_VIEW_STATS_TITLE}">{BUTTON_VIEW_STATS}</a></li>
                  <li><a href="#newsadmin" title="{BUTTON_NEWS_ADMIN_TITLE}">{BUTTON_NEWS_ADMIN}</a></li>
                  <li><a href="#doctype" title="{BUTTON_DOCTYPE_ADMIN_TITLE}">{BUTTON_DOCTYPE_ADMIN}</a></li>
+                 <li><a href="#doccat" title="{BUTTON_DOCCAT_ADMIN_TITLE}">{BUTTON_DOCCAT_ADMIN}</a></li>
 <!-- BEGIN: BackupOn -->
                  <li><a href="#dobackup" title="{BUTTON_BACKUP_TITLE}">{BUTTON_BACKUP}</a></li>
 <!-- END: BackupOn -->
@@ -97,6 +98,7 @@
                  <div id="viewstats" url="{BUTTON_VIEW_STATS_URL}"></div>
                  <div id="newsadmin" url="{BUTTON_NEWS_ADMIN_URL}"></div>
                  <div id="doctype" url="{BUTTON_DOCTYPE_ADMIN_URL}"></div>
+                 <div id="doccat" url="{BUTTON_DOCCAT_ADMIN_URL}"></div>
 <!-- BEGIN: BackupOnDiv -->
                  <div id="dobackup" url="{BUTTON_BACKUP_URL}">BACKUP PERFORMED</div>
 <!-- END: BackupOnDiv -->

@@ -57,6 +57,13 @@
  	       <td class="button1"><a class="lbutton1" href="{BUTTON_DOCTYPE_ADMIN_URL}" title="{BUTTON_DOCTYPE_ADMIN_TITLE}">{BUTTON_DOCTYPE_ADMIN}</a></td>
 <!-- END: DocTypeAdminOn -->
 
+<!-- BEGIN: DocCatAdminOff -->
+	       <td class="abutton">{BUTTON_DOCCAT_ADMIN}</td>
+<!-- END: DocCatAdminOff -->
+<!-- BEGIN: DocCatAdminOn -->
+ 	       <td class="button1"><a class="lbutton1" href="{BUTTON_DOCCAT_ADMIN_URL}" title="{BUTTON_DOCCAT_ADMIN_TITLE}">{BUTTON_DOCCAT_ADMIN}</a></td>
+<!-- END: DocCatAdminOn -->
+
 <!-- BEGIN: BackupOff -->
 	       <td class="abutton0">{BUTTON_BACKUP}</td>
 <!-- END: BackupOff -->

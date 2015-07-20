@@ -1877,6 +1877,18 @@ function fPrintAdminPanelXTPL($action)
       $xtpl->parse('main.AdminPanel.DocTypeAdminOn');
    }
 
+    $xtpl->assign('BUTTON_DOCCAT_ADMIN', $owl_lang->btn_doccat_admin);
+    if($action == "doccats")
+    {
+        $xtpl->parse('main.AdminPanel.DocCatAdminOff');
+    }
+    else
+    {
+        $xtpl->assign('BUTTON_DOCCAT_ADMIN_URL', $default->owl_root_url . "/admin/doc_cat.php?sess=$sess");
+        $xtpl->assign('BUTTON_DOCCAT_ADMIN_TITLE', $owl_lang->alt_btn_doccat_admin);
+        $xtpl->parse('main.AdminPanel.DocCatAdminOn');
+    }
+
    $xtpl->assign('BUTTON_BACKUP', $owl_lang->btn_backup);
    if (file_exists($default->dbdump_path) && file_exists($default->gzip_path))
    {

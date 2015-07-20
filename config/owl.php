@@ -330,6 +330,8 @@ $default->owl_user_downloads            = $default->owl_table_prefix . "user_dow
 // Table with Custom Document Type Definitions
 $default->owl_doctype_table          	= $default->owl_table_prefix . "doctype";
 // use this line for modified definition and comment line above
+// Table with Custom Document Category Definitions
+$default->owl_doccat_table          	= $default->owl_table_prefix . "doc_category";
 // Table with Custom Document Field Labels (User specified field names)
 
 // Table with Custom Document Field Definitions  
@@ -458,6 +460,7 @@ $default->owl_db_display_name[0]   = "owl Ver. 1.11";
 // This path should not include the directory name "/Documents"
 // only the path leading to it.
 $default->owl_db_FileDir[0]        =  $default->owl_fs_root;
+$default->owl_db_FileDir[0]        =  "/opt/lampp/htdocs/doxbox" ;
 // $default->owl_db_FileDir[0]        =  "/home/yoursite/documents_00.d" ;
 
 // DATABASE[0] - TODO: Define

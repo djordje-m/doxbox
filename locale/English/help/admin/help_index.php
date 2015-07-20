@@ -106,6 +106,18 @@ Note: To view the help for "Users &amp; Groups":
     </td>
 </tr>
 
+    <tr>
+        <td class="tdItem">Document Categories
+        </td>
+
+        <td class="tdDesc">Add, change, and delete document categories.
+        </td>
+
+        <td class="tdAction">
+        </td>
+    </tr>
+
+
 <tr>
 	<td class="tdItem">Backup Database
 	</td>

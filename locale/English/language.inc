@@ -732,6 +732,7 @@ $owl_lang->allow_track_favorite         = "Allow Users To Track Favorites";
 $owl_lang->admin_login_to_browse_page	= "Admin goes to Browse Page on Logon";
 $owl_lang->alt_btn_backup		= "Backup SQL Database";
 $owl_lang->alt_btn_doctype_admin	= "Document Type Administrator";
+$owl_lang->alt_btn_doccat_admin	= "Document Category Administrator";
 $owl_lang->alt_btn_log_viewer		= "DMS System Log Viewer";
 $owl_lang->alt_btn_news_admin		= "DMS News Administrator";
 $owl_lang->alt_btn_site_features	= "Edit Site Features and Settings";
@@ -739,6 +740,7 @@ $owl_lang->alt_btn_statistics_viewer	= "DMS Statistics Viewer";
 $owl_lang->alt_btn_users_groups		= "Administer Users and Groups";
 $owl_lang->btn_backup			= "Backup<br />Database";
 $owl_lang->btn_doctype_admin		= "Document<br />Types";
+$owl_lang->btn_doccat_admin		= "Document<br />Categories";
 $owl_lang->btn_log_viewer		= "Log<br />Viewer";
 $owl_lang->btn_news_admin		= "News<br />Admin";
 $owl_lang->btn_site_features		= "Site<br />Features";
@@ -1345,6 +1347,37 @@ $owl_lang->doc_fields = "Custom Fields";
 
 //********************************************************
 // admin/doctype.php END
+//********************************************************
+
+//********************************************************
+// admin/doc_cat.php BEGIN
+//********************************************************
+
+$owl_lang->doc_administration_cat	= "Document Category Admininstration";
+$owl_lang->doc_field_label_cat	= "Field Label (Per Locale)";
+$owl_lang->doc_field_name_cat	= "Field Name";
+$owl_lang->doc_field_pos_cat	= "Field Pos";
+$owl_lang->doc_field_required_cat	= "Required?";
+$owl_lang->doc_field_searchable_cat	= "Searchable?";
+$owl_lang->doc_field_size_cat	= "Text Box: Field Size<br />Text Area: Number of Rows<br />Multiple Check Box: Number of Columns<br />";
+$owl_lang->doc_new_doc_type_cat	= "&#8211; ADD New Document Category &#8211;";
+$owl_lang->doc_specific_cat		= "DOCUMENT SPECIFIC FIELDS" . LABEL_TERMINATOR;
+$owl_lang->document_cat	= "Document Type";
+$owl_lang->document_cat_name	= "Document Category Name";
+// BEGIN NEW STUFF
+//$owl_lang->doc_field_popup  = "Insert in popup description?";
+//$owl_lang->doc_field_disp_label = "FIELD LABEL" . LABEL_TERMINATOR;
+//$owl_lang->doc_field_disp_sep = "SEPERATOR LABEL";
+//$owl_lang->doc_field_sample	= "&#8211;&nbsp;&nbsp;S&nbsp;A&nbsp;M&nbsp;P&nbsp;L&nbsp;E&nbsp;&nbsp;&nbsp;V&nbsp;I&nbsp;E&nbsp;W&nbsp;&nbsp;&#8211;";
+//$owl_lang->doc_field_show_in_browse = "Display Browser" . LABEL_TERMINATOR;
+//$owl_lang->doc_field_show_in_list = "Show Field in Browse View" . LABEL_TERMINATOR;
+//$owl_lang->doc_field_type	= "Field Type" . LABEL_TERMINATOR;
+//$owl_lang->doc_field_values	= "Field Values Seperated With | " . LABEL_TERMINATOR;
+//$owl_lang->doc_fields = "Custom Fields";
+// END NEW STUFF
+
+//********************************************************
+// admin/doc_cat.php END
 //********************************************************
 
 //********************************************************

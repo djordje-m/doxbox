@@ -181,6 +181,7 @@ $owl_lang->btn_collapse_view          = "Collapse View";
 $owl_lang->btn_create          = "Create";
 $owl_lang->btn_default_view          = "Default View";
 $owl_lang->btn_deldoctype          = "Del Doc Type";
+$owl_lang->btn_deldoccat          = "Del Doc Category";
 $owl_lang->btn_download_bulk_package	= "to download your bulk download Package";
 $owl_lang->btn_edit_group          = "Edit Group";
 $owl_lang->btn_edit_user          = "Edit User";
@@ -1362,7 +1363,7 @@ $owl_lang->doc_field_searchable_cat	= "Searchable?";
 $owl_lang->doc_field_size_cat	= "Text Box: Field Size<br />Text Area: Number of Rows<br />Multiple Check Box: Number of Columns<br />";
 $owl_lang->doc_new_doc_type_cat	= "&#8211; ADD New Document Category &#8211;";
 $owl_lang->doc_specific_cat		= "DOCUMENT SPECIFIC FIELDS" . LABEL_TERMINATOR;
-$owl_lang->document_cat	= "Document Type";
+$owl_lang->document_cat	= "Document Category";
 $owl_lang->document_cat_name	= "Document Category Name";
 // BEGIN NEW STUFF
 //$owl_lang->doc_field_popup  = "Insert in popup description?";

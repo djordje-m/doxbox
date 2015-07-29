@@ -22,6 +22,19 @@
                </tr>
 <!-- END: Doctypes -->
 
+<!-- BEGIN: DocCat -->
+               <tr>
+                  <td class="form1">{DOCCAT_LABEL}</td>
+                  <td class="form1" width="100%">
+                     <select class="fpull1" name="doccat" size="1" >
+<!-- BEGIN: Value -->
+                       <option value="{DOCCAT_VALUE}" {DOCCAT_VALUE_SELECTED}>{DOCCAT_VALUE_LABEL}</option>
+<!-- END: Value -->
+                     </select>
+                  </td>
+               </tr>
+<!-- END: DocCat -->
+
 <!-- BEGIN: FileUploads -->
                <tr>
                   <td class="form1">{FILE_UPLOAD_LABEL}</td>

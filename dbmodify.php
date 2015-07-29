@@ -123,7 +123,7 @@ if ($default->use_ubr_progress_bar == 1 && ($action == "file_upload" or $action 
 
 if (($action == "file_upload" or $action == "zip_upload") and !isset($send_file_x) and $default->use_ubr_progress_bar == 0)
 {
-   header("Location: " . $default->owl_root_url . "/modify.php?sess=$sess&action=$action&parent=$parent&expand=$expand&order=$order&sortname=$sort&doctype=$doctype&type=$type");
+   header("Location: " . $default->owl_root_url . "/modify.php?sess=$sess&action=$action&parent=$parent&expand=$expand&order=$order&sortname=$sort&doctype=$doctype&doccat=$doccat&type=$type");
    exit;
 }
 
@@ -160,6 +160,11 @@ if (!isset($type))
 if (!isset($doctype))
 {
    $doctype = "1";
+}
+
+if (!isset($doccat))
+{
+    $doccat = "1";
 }
 
 if ($default->make_file_indexing_user_selectable == 1)
@@ -860,7 +865,7 @@ if ($action == "file_update")
          if ($default->owl_use_fs)
          { 
             // insert entry for backup file
-            $result = $sql->query("INSERT INTO $default->owl_files_table (name,filename,f_size,creatorid,updatorid,parent,created, smodified,groupid,description,metadata,security,major_revision,minor_revision, doctype, linkedto, approved) values ('" . $sql->make_arg_safe($backup_name) . "','" . $sql->make_arg_safe($version_name) . "','$backup_size','$backup_creatorid','$backup_updatorid','$backup_parent',$dCreateDate,'$backup_smodified','$backup_groupid', '$backup_description','$backup_metadata','$backup_security','$backup_major','$backup_minor', '$doctype', '$backup_linkedto', '1')") or unlink($backuppath);
+            $result = $sql->query("INSERT INTO $default->owl_files_table (name,filename,f_size,creatorid,updatorid,parent,created, smodified,groupid,description,metadata,security,major_revision,minor_revision, doctype, doc_category, linkedto, approved) values ('" . $sql->make_arg_safe($backup_name) . "','" . $sql->make_arg_safe($version_name) . "','$backup_size','$backup_creatorid','$backup_updatorid','$backup_parent',$dCreateDate,'$backup_smodified','$backup_groupid', '$backup_description','$backup_metadata','$backup_security','$backup_major','$backup_minor', '$doctype', '$doccat', '$backup_linkedto', '1')") or unlink($backuppath);
             if (!$result && $default->owl_use_fs) unlink($newpath);
 
             $idbackup = $sql->insert_id($default->owl_files_table, 'id'); 
@@ -887,7 +892,7 @@ if ($action == "file_update")
             $fsize = filesize($userfile['tmp_name']);
 
             
-            $sql->query("INSERT INTO $default->owl_files_table (name,filename,f_size,creatorid,updatorid,parent, created, smodified,groupid,description,metadata,security,major_revision,minor_revision, doctype, linkedto, approved) VALUES ('$backup_name','" . $userfile['name'] . "','" . $userfile['size'] . "','$backup_creatorid','$userid','$parent',$dCreateDate,$smodified,'$backup_groupid', '$newdesc', '$backup_metadata','$backup_security','$new_major','$new_minor', '$doctype', '$backup_linkedto', '$iDocApproved')");
+            $sql->query("INSERT INTO $default->owl_files_table (name,filename,f_size,creatorid,updatorid,parent, created, smodified,groupid,description,metadata,security,major_revision,minor_revision, doctype, doc_category, linkedto, approved) VALUES ('$backup_name','" . $userfile['name'] . "','" . $userfile['size'] . "','$backup_creatorid','$userid','$parent',$dCreateDate,$smodified,'$backup_groupid', '$newdesc', '$backup_metadata','$backup_security','$new_major','$new_minor', '$doctype', '$doccat', '$backup_linkedto', '$iDocApproved')");
 
             $fid = $id;
             $id = $sql->insert_id($default->owl_files_table, 'id');
@@ -1245,7 +1250,7 @@ if ($action == "zip_upload")
       }
    }
 
-   fInsertUnzipedFiles($newpath, $newParent, $FolderPolicy, $security, $description, $groupid, $userid, $metadata, $title, $major_revision, $minor_revision, $doctype, true, $reviewers);
+   fInsertUnzipedFiles($newpath, $newParent, $FolderPolicy, $security, $description, $groupid, $userid, $metadata, $title, $major_revision, $minor_revision, $doctype, $doccat, true, $reviewers);
 
 
    if (!$default->owl_use_fs )
@@ -1484,7 +1489,7 @@ if ($action == "file_upload" or $action == "jupload")
 
          $new_quota = fCalculateQuota($note_size, $userid, "ADD");
 
-         $sql->query("INSERT INTO $default->owl_files_table (name,filename,f_size,creatorid, updatorid,parent,created, description,metadata,security,groupid,smodified,checked_out, major_revision, minor_revision, url, doctype, approved, expires, name_search, filename_search, description_search, metadata_search) values ('" . $sql->make_arg_safe($title) . "', '" . $sql->make_arg_safe($new_name) . "', '$note_size', '$userid', '$userid', '$parent', $dCreateDate,'$description', '" . $sql->make_arg_safe($metadata) . "', '$security', '$groupid',$smodified,'$checked_out','$major_revision','$minor_revision','2', '1', '1', '$expires', '" . fReplaceSpecial($title) . "', '" . fReplaceSpecial($new_name) . "', '" . fReplaceSpecial($description) . "', '" . fReplaceSpecial($metadata) . "')");
+         $sql->query("INSERT INTO $default->owl_files_table (name,filename,f_size,creatorid, updatorid,parent,created, description,metadata,security,groupid,smodified,checked_out, major_revision, minor_revision, url, doctype, doc_category, approved, expires, name_search, filename_search, description_search, metadata_search) values ('" . $sql->make_arg_safe($title) . "', '" . $sql->make_arg_safe($new_name) . "', '$note_size', '$userid', '$userid', '$parent', $dCreateDate,'$description', '" . $sql->make_arg_safe($metadata) . "', '$security', '$groupid',$smodified,'$checked_out','$major_revision','$minor_revision','2', '1', '1', '1', '$expires', '" . fReplaceSpecial($title) . "', '" . fReplaceSpecial($new_name) . "', '" . fReplaceSpecial($description) . "', '" . fReplaceSpecial($metadata) . "')");
 
          if ($default->owl_use_fs)
          {
@@ -1993,7 +1998,7 @@ t->version_control_backup_dir_name', '$parent', '" . fCurFolderSecurity($parent)
       if ($default->owl_use_fs)
          {
             // insert entry for backup file
-            $result = $sql->query("insert into $default->owl_files_table (name,filename,f_size,creatorid,updatorid,parent,created, smodified,groupid,description,metadata,security,major_revision,minor_revision, doctype, linkedto, approved, name_search, filename_search, description_search, metadata_search) values ('$backup_name','   $version_name','$backup_size','$backup_creatorid','$backup_updatorid','$backup_parent',$dcreatedate,'$backup_smodified','$backup_groupid', '$backup_description','$backup_metadata','$backup_security','$backup_major','$backup_minor', '$doctype', '$backup_linkedto', '1', '" . fReplaceSpecial($backup_name) . "', '" . fReplaceSpecial($version_name) . "', '" . fReplaceSpecial($backup_description) . "', '" . fReplaceSpecial($backup_metadata) . "')") or unlink($backuppath);
+            $result = $sql->query("insert into $default->owl_files_table (name,filename,f_size,creatorid,updatorid,parent,created, smodified,groupid,description,metadata,security,major_revision,minor_revision, doctype, doc_category, linkedto, approved, name_search, filename_search, description_search, metadata_search) values ('$backup_name','   $version_name','$backup_size','$backup_creatorid','$backup_updatorid','$backup_parent',$dcreatedate,'$backup_smodified','$backup_groupid', '$backup_description','$backup_metadata','$backup_security','$backup_major','$backup_minor', '$doctype', '$doccat', '$backup_linkedto', '1', '" . fReplaceSpecial($backup_name) . "', '" . fReplaceSpecial($version_name) . "', '" . fReplaceSpecial($backup_description) . "', '" . fReplaceSpecial($backup_metadata) . "')") or unlink($backuppath);
             if (!$result && $default->owl_use_fs) unlink($newpath);
 
             $idbackup = $sql->insert_id($default->owl_files_table, 'id');
@@ -2020,7 +2025,7 @@ t->version_control_backup_dir_name', '$parent', '" . fCurFolderSecurity($parent)
             $fsize = filesize($userfile['tmp_name']);
 
 
-            $sql->query("INSERT INTO $default->owl_files_table (name,filename,f_size,creatorid,updatorid,parent, created, smodified,groupid,description,metadata,security,major_revision,minor_revision, doctype, linkedto, approved, name_search, filename_search, description_search, metadata_search) VALUES ('$backup_name','" . $userfile['name'] . "','" . $userfile['size'] . "','$backup_creatorid','$userid','$parent',$dCreateDate,$smodified,'$backup_groupid', '$newdesc', '$backup_metadata','$backup_security','$new_major','$new_minor', '$doctype', '$backup_linkedto', '$iDocApproved', '" . fReplaceSpecial($backup_name) . "', '" . fReplaceSpecial($userfile['name']) . "', '" . fReplaceSpecial($newdesc) . "', '" . fReplaceSpecial($backup_metadata) . "')");
+            $sql->query("INSERT INTO $default->owl_files_table (name,filename,f_size,creatorid,updatorid,parent, created, smodified,groupid,description,metadata,security,major_revision,minor_revision, doctype, doc_category, linkedto, approved, name_search, filename_search, description_search, metadata_search) VALUES ('$backup_name','" . $userfile['name'] . "','" . $userfile['size'] . "','$backup_creatorid','$userid','$parent',$dCreateDate,$smodified,'$backup_groupid', '$newdesc', '$backup_metadata','$backup_security','$new_major','$new_minor', '$doctype', '$doccat','$backup_linkedto', '$iDocApproved', '" . fReplaceSpecial($backup_name) . "', '" . fReplaceSpecial($userfile['name']) . "', '" . fReplaceSpecial($newdesc) . "', '" . fReplaceSpecial($backup_metadata) . "')");
 
             $fid = $iUpdateID;
             $id = $sql->insert_id($default->owl_files_table, 'id');
@@ -2085,7 +2090,7 @@ t->version_control_backup_dir_name', '$parent', '" . fCurFolderSecurity($parent)
 //fOwlWebDavLog ("JUPLOAD", "BEFORE FILE INSERT 1");
 //fOwlWebDavLog ("JUPLOAD", "SQL: INSERT INTO $default->owl_files_table (name,filename,f_size,creatorid,updatorid,parent,created,description,metadata,security,groupid,smodified,checked_out, major_revision, minor_revision, url, doctype, password, linkedto, approved, expires, name_search, filename_search, description_search, metadata_search) values ('$title', '" . $sql->make_arg_safe($new_name) . "', '" . $userfile['size'] . "', '$iCreatorID', '$iCreatorID', '$parent', $dCreateDate, '$sDescription', '$sMetadata', '$security', '$iGroupID',$smodified,'$checked_out','$major_revision','$minor_revision', '0', '$doctype', '$newpassword' ,'0', '$iDocApproved', '$expires', '" . $sql->make_arg_safe(fReplaceSpecial($title)) . "', '" . $sql->make_arg_safe(fReplaceSpecial($new_name)) . "', '" . $sql->make_arg_safe(fReplaceSpecial($description)) . "', '" . $sql->make_arg_safe(fReplaceSpecial($metadata)) . "')");
 
-               $result = $sql->query("INSERT INTO $default->owl_files_table (name,filename,f_size,creatorid,updatorid,parent,created,description,metadata,security,groupid,smodified,checked_out, major_revision, minor_revision, url, doctype, password, linkedto, approved, expires, name_search, filename_search, description_search, metadata_search) values ('$title', '" . $sql->make_arg_safe($new_name) . "', '" . $userfile['size'] . "', '$iCreatorID', '$iCreatorID', '$parent', $dCreateDate, '$sDescription', '$sMetadata', '$security', '$iGroupID',$smodified,'$checked_out','$major_revision','$minor_revision', '0', '$doctype', '$newpassword' ,'0', '$iDocApproved', '$expires', '" . $sql->make_arg_safe(fReplaceSpecial($title)) . "', '" . $sql->make_arg_safe(fReplaceSpecial($new_name)) . "', '" . $sql->make_arg_safe(fReplaceSpecial($description)) . "', '" . $sql->make_arg_safe(fReplaceSpecial($metadata)) . "')") or unlink($newpath);
+               $result = $sql->query("INSERT INTO $default->owl_files_table (name,filename,f_size,creatorid,updatorid,parent,created,description,metadata,security,groupid,smodified,checked_out, major_revision, minor_revision, url, doctype, doc_category, password, linkedto, approved, expires, name_search, filename_search, description_search, metadata_search) values ('$title', '" . $sql->make_arg_safe($new_name) . "', '" . $userfile['size'] . "', '$iCreatorID', '$iCreatorID', '$parent', $dCreateDate, '$sDescription', '$sMetadata', '$security', '$iGroupID',$smodified,'$checked_out','$major_revision','$minor_revision', '0', '$doctype', '$doccat', '$newpassword' ,'0', '$iDocApproved', '$expires', '" . $sql->make_arg_safe(fReplaceSpecial($title)) . "', '" . $sql->make_arg_safe(fReplaceSpecial($new_name)) . "', '" . $sql->make_arg_safe(fReplaceSpecial($description)) . "', '" . $sql->make_arg_safe(fReplaceSpecial($metadata)) . "')") or unlink($newpath);
 //fOwlWebDavLog ("JUPLOAD", "AFTER FILE INSERT 1");
                if (!$result and $default->owl_use_fs) 
                {
@@ -2626,7 +2631,7 @@ if ($action == "file_modify")
                $minor_revision = $default->minor_revision;
             }
 
-            $sql->query("UPDATE $default->owl_files_table set name='$title', smodified = $smodified, filename='$filename', security='$security', metadata='$metadata', description='$description',groupid='$groupid', creatorid ='$file_owner' ,updatorid = '$userid',  password = '$newpassword', doctype='$doctype',major_revision = '$major_revision', minor_revision = '$minor_revision', expires = '$expires', name_search='" . fReplaceSpecial($title) . "', filename_search='" . fReplaceSpecial($filename) . "', description_search='" . fReplaceSpecial($description) . "', metadata_search='" . fReplaceSpecial($metadata) .   "' WHERE id = '$id'");
+            $sql->query("UPDATE $default->owl_files_table set name='$title', smodified = $smodified, filename='$filename', security='$security', metadata='$metadata', description='$description',groupid='$groupid', creatorid ='$file_owner' ,updatorid = '$userid',  password = '$newpassword', doctype='$doctype', doc_category='$doccat', major_revision = '$major_revision', minor_revision = '$minor_revision', expires = '$expires', name_search='" . fReplaceSpecial($title) . "', filename_search='" . fReplaceSpecial($filename) . "', description_search='" . fReplaceSpecial($description) . "', metadata_search='" . fReplaceSpecial($metadata) .   "' WHERE id = '$id'");
             if (fisAdmin())
             {
                $sql->query("UPDATE $default->owl_files_table SET smodified=$smodified, major_revision = '$major_revision', minor_revision = '$minor_revision', updatorid='$userid', expires = '$expires'  WHERE linkedto='$id'");

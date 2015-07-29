@@ -1114,7 +1114,7 @@ function notify_users($groupid, $flag, $fileid, $type = "")
    } 
 } 
 
-function fInsertUnzipedFiles($path, $cParent, $FolderPolicy, $FilePolicy, $description, $groupid, $iCreatorID, $metadata, $title, $major_revision, $minor_revision, $doctype, $bRemoveFiles = true, $reviewers = array())
+function fInsertUnzipedFiles($path, $cParent, $FolderPolicy, $FilePolicy, $description, $groupid, $iCreatorID, $metadata, $title, $major_revision, $minor_revision, $doctype, $doccat, $bRemoveFiles = true, $reviewers = array())
 {
    global $default, $sess, $message;
    $sql = new OWL_DB;
@@ -1150,7 +1150,7 @@ function fInsertUnzipedFiles($path, $cParent, $FolderPolicy, $FilePolicy, $descr
                      fSetDefaultFolderAcl($newParent);
                      fSetInheritedAcl($cParent, $newParent, "FOLDER");
                   }
-                  fInsertUnzipedFiles($path . DIR_SEP .$file, $newParent, $FolderPolicy, $FilePolicy, $description, $groupid, $iCreatorID, $metadata, $title, $major_revision, $minor_revision, $doctype, $bRemoveFiles);
+                  fInsertUnzipedFiles($path . DIR_SEP .$file, $newParent, $FolderPolicy, $FilePolicy, $description, $groupid, $iCreatorID, $metadata, $title, $major_revision, $minor_revision, $doctype, $doccat, $bRemoveFiles);
                }
                else
                {
@@ -1206,7 +1206,7 @@ function fInsertUnzipedFiles($path, $cParent, $FolderPolicy, $FilePolicy, $descr
                   else
                   {
                      $bUpdate = false;
-                     $result = $sql->query("INSERT INTO $default->owl_files_table (name,filename,f_size,creatorid,updatorid,parent,created,description,metadata,security,groupid,smodified,checked_out, major_revision, minor_revision, url, doctype, approved) values ('$ctitle', '$file', '$TheFileSize', '$iCreatorID', '$iCreatorID', '$cParent', '$TheFileTime' , '$description', '$metadata', '$FilePolicy', '$groupid', '$TheFileTime', '0','$major_revision','$minor_revision', '0', '$doctype', '$iDocApproved')");
+                     $result = $sql->query("INSERT INTO $default->owl_files_table (name,filename,f_size,creatorid,updatorid,parent,created,description,metadata,security,groupid,smodified,checked_out, major_revision, minor_revision, url, doctype, doccat,approved) values ('$ctitle', '$file', '$TheFileSize', '$iCreatorID', '$iCreatorID', '$cParent', '$TheFileTime' , '$description', '$metadata', '$FilePolicy', '$groupid', '$TheFileTime', '0','$major_revision','$minor_revision', '0', '$doctype', '$doccat', ''$iDocApproved')");
                      $searchid = $sql->insert_id($default->owl_files_table, 'id');
 //print("<pre>");
 //print_r($_POST);
@@ -3722,6 +3722,7 @@ function getprefs ()
    $default->expand_disp_status = $sql->f("expand_disp_status");
    $default->expand_disp_doc_num = $sql->f("expand_disp_doc_num");
    $default->expand_disp_doc_type = $sql->f("expand_disp_doc_type");
+   $default->expand_disp_doc_cat = $sql->f("expand_disp_doc_cat");
    $default->expand_disp_doc_fields =$sql->f("expand_disp_doc_fields");
    $default->expand_disp_title = $sql->f("expand_disp_title");
    $default->expand_disp_version = $sql->f("expand_disp_version");
@@ -3736,6 +3737,7 @@ function getprefs ()
    $default->collapse_disp_status = $sql->f("collapse_disp_status");
    $default->collapse_disp_doc_num = $sql->f("collapse_disp_doc_num");
    $default->collapse_disp_doc_type = $sql->f("collapse_disp_doc_type");
+   $default->collapse_disp_doc_cat = $sql->f("collapse_disp_doc_cat");
    $default->collapse_disp_doc_fields =$sql->f("collapse_disp_doc_fields");
    $default->collapse_disp_title = $sql->f("collapse_disp_title");
    $default->collapse_disp_version = $sql->f("collapse_disp_version");
@@ -3750,6 +3752,7 @@ function getprefs ()
    $default->expand_search_disp_score =  $sql->f("expand_search_disp_score");
    $default->expand_search_disp_folder_path = $sql->f("expand_search_disp_folder_path");
    $default->expand_search_disp_doc_type = $sql->f("expand_search_disp_doc_type");
+   $default->expand_search_disp_doc_cat = $sql->f("expand_search_disp_doc_cat");
    $default->expand_search_disp_doc_fields = $sql->f("expand_search_disp_doc_fields");
    $default->expand_search_disp_file = $sql->f("expand_search_disp_file");
    $default->expand_search_disp_size = $sql->f("expand_search_disp_size");
@@ -3763,6 +3766,7 @@ function getprefs ()
    $default->collapse_search_disp_score =  $sql->f("collapse_search_disp_score");
    $default->collapse_search_disp_folder_path = $sql->f("colps_search_disp_fld_path");
    $default->collapse_search_disp_doc_type = $sql->f("collapse_search_disp_doc_type");
+    $default->collapse_search_disp_doc_cat = $sql->f("collapse_search_disp_doc_cat");
    $default->colps_search_disp_doc_fields = $sql->f("colps_search_disp_doc_fields");
    $default->collapse_search_disp_file = $sql->f("collapse_search_disp_file");
    $default->collapse_search_disp_size = $sql->f("collapse_search_disp_size");

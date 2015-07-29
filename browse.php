@@ -517,8 +517,9 @@ else
       $sApproved = "and approved = '1'";
    }
 
+   $sLeftJoin2="LEFT OUTER JOIN $default->owl_doccat_table dt ON doc_category = dt.doc_category_id";
    // Query TO retreive the Files in the current Folder
-   $FileQuery = "select f.* from $default->owl_files_table f $sLeftJoin where parent = '$parent' order by $order_clause $sLimit";
+   $FileQuery = "select * from $default->owl_files_table f $sLeftJoin $sLeftJoin2 where parent = '$parent' order by $order_clause $sLimit";
    $MenuFileQuery = "select * from $default->owl_files_table where parent = '$parent' $sApproved order by $order_clause $sLimit";
 }
 //print("<br />FQ: $FileQuery");

@@ -750,6 +750,7 @@ if ($action == "edprefs")
    $expand_disp_status = fIntializeCheckBox($expand_disp_status);
    $expand_disp_doc_num = fIntializeCheckBox($expand_disp_doc_num);
    $expand_disp_doc_type = fIntializeCheckBox($expand_disp_doc_type);
+   $expand_disp_doc_cat = fIntializeCheckBox($expand_disp_doc_cat);
    $expand_disp_doc_fields = fIntializeCheckBox($expand_disp_doc_fields);
    $expand_disp_title = fIntializeCheckBox($expand_disp_title);
    $expand_disp_version = fIntializeCheckBox($expand_disp_version);
@@ -764,6 +765,7 @@ if ($action == "edprefs")
    $collapse_disp_status = fIntializeCheckBox($collapse_disp_status);
    $collapse_disp_doc_num = fIntializeCheckBox($collapse_disp_doc_num);
    $collapse_disp_doc_type = fIntializeCheckBox($collapse_disp_doc_type);
+   $collapse_disp_doc_cat = fIntializeCheckBox($collapse_disp_doc_cat);
    $collapse_disp_doc_fields = fIntializeCheckBox($collapse_disp_doc_fields);
    $collapse_disp_title = fIntializeCheckBox($collapse_disp_title);
    $collapse_disp_version = fIntializeCheckBox($collapse_disp_version);
@@ -779,6 +781,7 @@ if ($action == "edprefs")
    $expand_search_disp_folder_path = fIntializeCheckBox($expand_search_disp_folder_path);
    $expand_search_disp_doc_num = fIntializeCheckBox($expand_search_disp_doc_num);
    $expand_search_disp_doc_type = fIntializeCheckBox($expand_search_disp_doc_type);
+   $expand_search_disp_doc_cat = fIntializeCheckBox($expand_search_disp_doc_cat);
    $expand_search_disp_doc_fields = fIntializeCheckBox($expand_search_disp_doc_fields);
    $expand_search_disp_file = fIntializeCheckBox($expand_search_disp_file);
    $expand_search_disp_size = fIntializeCheckBox($expand_search_disp_size);
@@ -791,6 +794,7 @@ if ($action == "edprefs")
    $collapse_search_disp_folder_path = fIntializeCheckBox($collapse_search_disp_folder_path);
    $collapse_search_disp_doc_num = fIntializeCheckBox($collapse_search_disp_doc_num);
    $collapse_search_disp_doc_type = fIntializeCheckBox($collapse_search_disp_doc_type);
+   $collapse_search_disp_doc_cat = fIntializeCheckBox($collapse_search_disp_doc_cat);
    $colps_search_disp_doc_fields = fIntializeCheckBox($colps_search_disp_doc_fields);
    $collapse_search_disp_file = fIntializeCheckBox($collapse_search_disp_file);
    $collapse_search_disp_size = fIntializeCheckBox($collapse_search_disp_size);
@@ -1058,6 +1062,7 @@ if ($action == "edprefs")
    $qPrefsQuery .= ", expand_disp_status = '$expand_disp_status'";
    $qPrefsQuery .= ", expand_disp_doc_num = '$expand_disp_doc_num'";
    $qPrefsQuery .= ", expand_disp_doc_type = '$expand_disp_doc_type'";
+   $qPrefsQuery .= ", expand_disp_doc_cat = '$expand_disp_doc_cat'";
    $qPrefsQuery .= ", expand_disp_doc_fields = '$expand_disp_doc_fields'";
    $qPrefsQuery .= ", expand_disp_title = '$expand_disp_title'";
    $qPrefsQuery .= ", expand_disp_version = '$expand_disp_version'";
@@ -1071,6 +1076,7 @@ if ($action == "edprefs")
    $qPrefsQuery .= ", collapse_disp_status = '$collapse_disp_status'";
    $qPrefsQuery .= ", collapse_disp_doc_num = '$collapse_disp_doc_num'";
    $qPrefsQuery .= ", collapse_disp_doc_type = '$collapse_disp_doc_type'";
+   $qPrefsQuery .= ", collapse_disp_doc_cat = '$collapse_disp_doc_cat'";
    $qPrefsQuery .= ", collapse_disp_doc_fields = '$collapse_disp_doc_fields'";
    $qPrefsQuery .= ", collapse_disp_title = '$collapse_disp_title'";
    $qPrefsQuery .= ", collapse_disp_version = '$collapse_disp_version'";
@@ -1085,6 +1091,7 @@ if ($action == "edprefs")
    $qPrefsQuery .= ", expand_search_disp_folder_path = '$expand_search_disp_folder_path'";
    $qPrefsQuery .= ", expand_search_disp_doc_num = '$expand_search_disp_doc_num'";
    $qPrefsQuery .= ", expand_search_disp_doc_type = '$expand_search_disp_doc_type'";
+   $qPrefsQuery .= ", expand_search_disp_doc_cat = '$expand_search_disp_doc_cat'";
    $qPrefsQuery .= ", expand_search_disp_doc_fields = '$expand_search_disp_doc_fields'";
    $qPrefsQuery .= ", expand_search_disp_file = '$expand_search_disp_file'";
    $qPrefsQuery .= ", expand_search_disp_size = '$expand_search_disp_size'";
@@ -1096,6 +1103,7 @@ if ($action == "edprefs")
    $qPrefsQuery .= ", colps_search_disp_fld_path = '$collapse_search_disp_folder_path'";
    $qPrefsQuery .= ", collapse_search_disp_doc_num = '$collapse_search_disp_doc_num'";
    $qPrefsQuery .= ", collapse_search_disp_doc_type = '$collapse_search_disp_doc_type'";
+   $qPrefsQuery .= ", collapse_search_disp_doc_cat = '$collapse_search_disp_doc_cat'";
    $qPrefsQuery .= ", colps_search_disp_doc_fields = '$colps_search_disp_doc_fields'";
    $qPrefsQuery .= ", collapse_search_disp_file = '$collapse_search_disp_file'";
    $qPrefsQuery .= ", collapse_search_disp_size = '$collapse_search_disp_size'";

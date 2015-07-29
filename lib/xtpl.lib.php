@@ -3015,6 +3015,33 @@ function fPrintDoctypePickListXtpl($doctype, $sSection = 'AddFiles')
    }
 }
 
+function fPrintDoccatPickListXtpl($doccat, $sSection = 'AddFiles')
+{
+    global $default, $owl_lang, $sess, $xtpl;
+    $sql = new Owl_DB;
+    $sql->query("SELECT * from $default->owl_doccat_table order by doc_category_name");
+
+    if ($sql->num_rows() > 1)
+    {
+
+        $xtpl->assign('OWL_SESS', $sess);
+        $xtpl->assign('DOCCAT_LABEL', $owl_lang->document_cat);
+       // $xtpl->assign('DOCCAT_ONCHANGE_WARNING', 'BIG WARNING HERE Save changes to Confirm!');
+        while ($sql->next_record())
+        {
+            $xtpl->assign('DOCCAT_VALUE', $sql->f("doc_category_id"));
+            $xtpl->assign('DOCCAT_VALUE_LABEL', $sql->f("doc_category_name"));
+            $xtpl->assign('DOCCAT_VALUE_SELECTED', '');
+            if ( $sql->f("doc_category_id") == $doccat )
+            {
+                $xtpl->assign('DOCCAT_VALUE_SELECTED', ' selected="selected"');
+            }
+            $xtpl->parse('main.' . $sSection . '.DocCat.Value');
+        }
+        $xtpl->parse('main.' . $sSection . '.DocCat');
+    }
+}
+
 //function fPrintFormDoctypeRadioXtpl($rowtitle, $fieldname, $value, $option_text , $sReadonly = "", $iFileId = "", $sSection = "ViewFile.Details")
 function fPrintFormDoctypeRadioXtpl($rowtitle, $fieldname, $value, $option_text , $sReadonly = "", $iFileId = "", $sSection = "DataBlock.File")
 {

@@ -1,14 +1,15 @@
 {FILE "html/header.xtpl"}
 {FILE "html/admin/includes/adminpanel.xtpl"}
-<!-- BEGIN: DocType -->
+<!-- BEGIN: DocCat -->
 {FORM}
 {HIDDEN_FIELDS}
+ <div class="admin_table">
    <table class="margin2" cellspacing="0" cellpadding="0" border="0" width="100%">
       <tr>
          <td align="left" valign="top">
             <table cellspacing="0" cellpadding="0" border="0" width="100%">
                <tr>
-                  <td class="admin0" width="100%" colspan="2">{DOCCAT_HEADING}</td>
+                  <td class="admin2" width="100%" colspan="2">{DOCCAT_HEADING}</td>
                </tr>
 
    <!-- BEGIN: List -->
@@ -36,7 +37,7 @@
                   <input  class="fbuttonup1" name="myaction" type="submit" value="{DOCCAT_BTN_CANCEL_VALUE}" alt="{DOCCAT_BTN_CANCEL_ALT}" title="{DOCCAT_BTN_CANCEL_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
                </tr>
    <!-- END: New -->
-   <!-- BEGIN: NewField -->
+   <!-- BEGIN: NewField
                <tr>
                   <td class="form1"><label for="field_name">{DOCCAT_FIELDNAME_LABEL}</label></td>
                   <td class="form1" width="100%"><input class="finput1" id="field_name" type="text" name="field_name" size="15" value="{DOCCAT_FIELDNAME_VALUE}" /></td>
@@ -48,17 +49,17 @@
                <tr>
                   <td class="form1">{DOCCAT_FIELDLABEL_LABEL}</td>
                   <td class="form1" width="100%">
-                     <table cellspacing="0" cellpadding="0" border="0">
-      <!-- BEGIN: Locale -->
+                     <table cellspacing="0" cellpadding="0" border="0"> -->
+      <!-- BEGIN: Locale
                         <tr>
                            <td class="form1">{DOCCAT_FIELDLABEL_LOCALE_LABEL}</td>
                            <td class="form1" width="100%"><input class="finput1" type="text" name="field_label[{DOCCAT_FIELDLABEL_LOCALE_LABEL}]" size="20" maxlength="255" value="{DOCCAT_FIELDLABEL_LOCALE_VALUE}" />
-                        </tr>
-      <!-- END: Locale -->
+                        </tr> -->
+      <!-- END: Locale
                      </table>
                   </td>
                </tr>
-               <tr>
+                <tr>
                   <td class="form1"><label for="field_size">{DOCCAT_FIELDSIZE_LABEL}</label></td>
                   <td class="form1" width="100%"><input class="finput1" id="field_size" type="text" name="field_size" size="5" value="{DOCCAT_FIELDSIZE_VALUE}" /></td>
                </tr>
@@ -66,7 +67,7 @@
                   <td class="form1">{DOCCAT_FIELDSEARCHABLE_LABEL}</td>
                   <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="searchable" value="1" {DOCCAT_FIELDSEARCHABLE_CHECKED} /></td>
                </tr>
-               <tr>
+             <tr>
                   <td class="form1">{DOCCAT_FIELDREQ_LABEL}</td>
                   <td class="form1" width="100%"><input class="fcheckbox1" type="checkbox" name="required" value="1" {DOCCAT_FIELDREQ_CHECKED} /></td>
                </tr>
@@ -80,17 +81,17 @@
                </tr>
                <tr>
                   <td class="form1">{DOCCAT_FIELDTYPE_LABEL}</td>
-                  <td class="form1" width="100%"><select class="fpull1" name="field_type" size="1">
-      <!-- BEGIN: FieldType -->
+                  <td class="form1" width="100%"><select class="fpull1" name="field_type" size="1"> -->
+      <!-- BEGIN: FieldType
                         <option value="{SELECT_BOX.FIELDTYPE_SELECTBOX_VALUE}"{SELECT_BOX.FIELDTYPE_SELECTBOX_SELECTED}>{SELECT_BOX.FIELDTYPE_SELECTBOX_LABEL}</option>
-      <!-- END: FieldType -->
+      END: FieldType
                      </select>
                   </td>
                </tr>
                <tr>
                   <td class="form1"><label for="field_values">{DOCCAT_FIELDVALUES_LABEL}</label></td>
                   <td class="form1" width="100%"><input class="finput1" id="field_values" type="text" name="field_values" size="50" value="{DOCCAT_FIELDVALUES_VALUE}" /></td>
-               </tr>
+               </tr>-->
                <tr>
                   <td class="form2" width="100%" colspan="2">
 
@@ -102,6 +103,9 @@
    <!-- BEGIN: EditField -->
                      <input  class="fbuttonup1" name="btn_upd_field_x" type="submit" value="{DOCCAT_BTN_EDITFIELD_VALUE}" alt="{DOCCAT_BTN_EDITFIELD_ALT}" title="{DOCCAT_BTN_EDITFIELD_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
    <!-- END: EditField -->
+                    <!-- <input  class="fbuttonup1" name="btn_add_field_x" type="submit" value="{DOCCAT_BTN_ADDFIELD_VALUE}" alt="{DOCCAT_BTN_ADDFIELD_ALT}" title="{DOCCAT_BTN_ADDFIELD_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /> -->
+                     <input  class="fbuttonup1" name="btn_del_doccat_x" type="submit" value="{DOCCAT_BTN_DELDOCTYP_VALUE}" alt="{DOCCAT_BTN_DELDOCTYP_ALT}" title="{DOCCAT_BTN_DELDOCTYP_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" />
+
                      <input  class="fbuttonup1" type="reset" value="Reset" alt="{DOCCAT_BTN_RESET_VALUE}" title="{DOCCAT_BTN_RESET_ALT}" onmouseover="highlightButton('fbuttondown1', this)" onmouseout="highlightButton('fbuttonup1', this)" /></td>
                </tr>
       <!-- END: NewField -->
@@ -110,6 +114,7 @@
          </td>
       </tr>
    </table>
+  </div>
 </form>
 
 <!-- BEGIN: FieldList -->
@@ -267,6 +272,7 @@
       </td>
    </tr>
 </table>
+</div>
 <!-- END: FieldList -->
-<!-- END: DocType -->
+<!-- END: DocCat -->
 {FILE "html/footer.xtpl"}

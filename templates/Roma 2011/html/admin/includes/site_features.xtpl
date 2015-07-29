@@ -269,6 +269,7 @@
                   <td class="form1" width="60">{BC_STATUS_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_DOC_NUM_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_DOC_ICON_COLUMN_LABEL}<br /></td>
+                  <td class="form1" width="60">{BC_DOC_CAT_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_DOC_FIELDS_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_TITLE_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_VER_COLUMN_LABEL}<br /></td>
@@ -284,6 +285,7 @@
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="expand_disp_status" value="1" {BC_EXPAND_DISP_STATUS_CHECKED} /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="expand_disp_doc_num" value="1" {BC_EXPAND_DISP_DOC_NUM_CHECKED} /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="expand_disp_doc_type" value="1" {BC_EXPAND_DISP_DOC_TYPE_CHECKED} /></td>
+                  <td class="form1"><input class="fcheckbox1" type="checkbox" name="expand_disp_doc_cat" value="1" {BC_EXPAND_DISP_DOC_CAT_CHECKED} /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="expand_disp_doc_fields" value="1" {BC_EXPAND_DISP_DOC_FIELDS_CHECKED}  /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="expand_disp_title" value="1" {BC_EXPAND_DISP_TITLE_CHECKED} /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="expand_disp_version" value="1" {BC_EXPAND_DISP_VERSION_CHECKED} /></td>
@@ -306,6 +308,7 @@
                   <td class="form1" width="60">{BC_STATUS_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_DOC_NUM_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_DOC_ICON_COLUMN_LABEL}<br /></td>
+                  <td class="form1" width="60">{BC_DOC_CAT_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_DOC_FIELDS_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_TITLE_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_VER_COLUMN_LABEL}<br /></td>
@@ -321,6 +324,7 @@
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="collapse_disp_status" value="1" {BC_COLLAPSE_DISP_STATUS_CHECKED} /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="collapse_disp_doc_num" value="1" {BC_COLLAPSE_DISP_DOC_NUM_CHECKED} /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="collapse_disp_doc_type" value="1" {BC_COLLAPSE_DISP_DOC_TYPE_CHECKED} /></td>
+                  <td class="form1"><input class="fcheckbox1" type="checkbox" name="collapse_disp_doc_cat" value="1" {BC_COLLAPSE_DISP_DOC_CAT_CHECKED} /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="collapse_disp_doc_fields" value="1" {BC_COLLAPSE_DISP_DOC_FIELDS_CHECKED}  /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="collapse_disp_title" value="1" {BC_COLLAPSE_DISP_TITLE_CHECKED} /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="collapse_disp_version" value="1" {BC_COLLAPSE_DISP_VERSION_CHECKED} /></td>
@@ -349,6 +353,7 @@
                   <td class="form1" width="60">{SR_FOLDER_PATH_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_DOC_NUM_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_DOC_ICON_COLUMN_LABEL}<br /></td>
+                  <td class="form1" width="60">{BC_DOC_CAT_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_DOC_FIELDS_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_FILE_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_SIZE_COLUMN_LABEL}<br /></td>
@@ -362,6 +367,7 @@
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="expand_search_disp_folder_path" value="1" {SR_EXPAND_SEARCH_DISP_FOLDER_PATH_CHECKED} /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="expand_search_disp_doc_num" value="1" {SR_EXPAND_SEARCH_DISP_DOC_NUM_CHECKED} /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="expand_search_disp_doc_type" value="1" {SR_EXPAND_SEARCH_DISP_DOC_TYPE_CHECKED} /></td>
+                  <td class="form1"><input class="fcheckbox1" type="checkbox" name="expand_search_disp_doc_cat" value="1" {SR_EXPAND_SEARCH_DISP_DOC_CAT_CHECKED} /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="expand_search_disp_doc_fields" value="1" {SR_EXPAND_SEARCH_DISP_DOC_FIELDS_CHECKED} /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="expand_search_disp_file" value="1" {SR_EXPAND_SEARCH_DISP_FILE_CHECKED} /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="expand_search_disp_size" value="1" {SR_EXPAND_SEARCH_DISP_SIZE_CHECKED} /></td>
@@ -382,6 +388,7 @@
                   <td class="form1" width="60">{SR_FOLDER_PATH_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_DOC_NUM_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_DOC_ICON_COLUMN_LABEL}<br /></td>
+                  <td class="form1" width="60">{BC_DOC_CAT_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_DOC_FIELDS_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_FILE_COLUMN_LABEL}<br /></td>
                   <td class="form1" width="60">{BC_SIZE_COLUMN_LABEL}<br /></td>
@@ -395,6 +402,7 @@
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="collapse_search_disp_folder_path" value="1" {SR_COLLAPSE_SEARCH_DISP_FOLDER_PATH_CHECKED} /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="collapse_search_disp_doc_num" value="1" {SR_COLLAPSE_SEARCH_DISP_DOC_NUM_CHECKED} /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="collapse_search_disp_doc_type" value="1" {SR_COLLAPSE_SEARCH_DISP_DOC_TYPE_CHECKED} /></td>
+                  <td class="form1"><input class="fcheckbox1" type="checkbox" name="collapse_search_disp_doc_cat" value="1" {SR_COLLAPSE_SEARCH_DISP_DOC_CAT_CHECKED} /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="colps_search_disp_doc_fields" value="1" {SR_COLLAPSE_SEARCH_DISP_DOC_FIELDS_CHECKED} /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="collapse_search_disp_file" value="1" {SR_COLLAPSE_SEARCH_DISP_FILE_CHECKED} /></td>
                   <td class="form1"><input class="fcheckbox1" type="checkbox" name="collapse_search_disp_size" value="1" {SR_COLLAPSE_SEARCH_DISP_SIZE_CHECKED} /></td>

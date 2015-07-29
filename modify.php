@@ -511,8 +511,13 @@ if ($action == "file_upload" or $action == "zip_upload")
          {
             $doctype = $default->default_url_doctype;
          }
+          if (!isset($doccat))
+          {
+              $doccat = $default->default_doccat;
+          }
 
          fPrintDoctypePickListXtpl($doctype);
+          fPrintDoccatPickListXtpl($doccat);
 	 $xtpl->assign('FILE_UPLOAD_LABEL', $owl_lang->sendthisurl);
          $xtpl->assign('FILE_UPLOAD_FIELDNAME', $filenamefield);
          $xtpl->parse('main.AddFiles.FileUploads.AddURL');
@@ -525,8 +530,14 @@ if ($action == "file_upload" or $action == "zip_upload")
          {
             $doctype = $default->default_doctype;
          }
+          if (!isset($doccat))
+          {
+              $doccat = $default->default_doccat;
+          }
 
          fPrintDoctypePickListXtpl($doctype);
+          //fPrintDoccatPickListXtpl();
+         fPrintDoccatPickListXtpl($doccat);
 
          $iMaxUploadSize = min( $default->max_filesize, return_bytes(ini_get('post_max_size')), return_bytes(ini_get('upload_max_filesize')), return_bytes(ini_get('memory_limit')));
 
@@ -966,6 +977,7 @@ if ($action == "file_modify")
       $urlArgs2['action']  = 'file_modify';
       $urlArgs2['id']      = $id;
       $urlArgs2['saved_doctype'] = $sql->f("doctype");
+      $urlArgs2['saved_doccat'] = $sql->f("doc_category");
       $urlArgs2['filename']  = $sql->f("filename");
 
       fPrintNavBarXTPL($parent, $owl_lang->modifying . ":&nbsp;", $id);
@@ -999,6 +1011,7 @@ if ($action == "file_modify")
       $xtpl->assign('HIDDEN_FIELDS', fGetHiddenFields ($urlArgs2));
 
       fPrintDoctypePickListXtpl($sql->f("doctype"), "EditFiles");
+       fPrintDoccatPickListXtpl($sql->f("doc_category"), "EditFiles");
 
       $xtpl->assign('FILE_TITLE_LABEL', $owl_lang->title);
       $xtpl->assign('FILE_TITLE_VALUE', $sql->f("name"));

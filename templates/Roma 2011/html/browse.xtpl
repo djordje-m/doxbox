@@ -31,6 +31,9 @@
 <!-- BEGIN: DocFields -->
                <td class="title1">{TITLE_DOCFIELDS}</td>
 <!-- END: DocFields -->
+<!-- BEGIN: doc_category -->
+               <td class="title1"><a class="ltitle1" href="{TITLE_URL}" title="{TITLE_TITLE}">{TITLE_LABEL}</a>&nbsp;{TITLE_SORT_IMG}<br /></td>
+<!-- END: doc_category -->
 <!-- BEGIN: major_minor_revision -->
                <td class="title1"><a class="ltitle1" href="{TITLE_URL}" title="{TITLE_TITLE}">{TITLE_LABEL}</a>&nbsp;{TITLE_SORT_IMG}<br /></td>
 <!-- END: major_minor_revision -->
@@ -49,6 +52,9 @@
 <!-- BEGIN: smodified -->
                <td class="title1"><a class="ltitle1" href="{TITLE_URL}" title="{TITLE_TITLE}">{TITLE_LABEL}</a>&nbsp;{TITLE_SORT_IMG}<br /></td>
 <!-- END: smodified -->
+<!-- BEGIN: f_cat -->
+               <td class="title1"><a class="ltitle1" href="{TITLE_URL}" title="{TITLE_TITLE}">{TITLE_LABEL}</a>&nbsp;{TITLE_SORT_IMG}<br /></td>
+<!-- END: f_cat -->
 <!-- BEGIN: Actions -->
                <td class="title1">{TITLE_ACTIONS}</td>
 <!-- END: Actions -->
@@ -148,6 +154,9 @@
 <!-- BEGIN: smodified -->
                <td class="{FOLDER_TD_CLASS}">{FOLDER_MODIFIED}</td>
 <!-- END: smodified -->
+<!-- BEGIN: f_cat -->
+               <td class="{FOLDER_TD_CLASS}">{FOLDER_CAT}</td>
+<!-- END: f_cat -->
 <!-- BEGIN: Action -->
                <td class="{FOLDER_TD_CLASS}">
                   <table cellspacing="2" cellpadding="0" border="0">
@@ -209,6 +218,9 @@
 <!-- BEGIN: DocType -->
                 <td class="{FILE_TD_CLASS}">{FILE_DOCTYPE_URL_OPEN}<img src="{THEME}/img/icon_filetype/{FILE_DOCTYPE_IMG}.png" border="0" alt="">{FILE_DOCTYPE_URL_CLOSE}</td>
 <!-- END: DocType -->
+<!-- BEGIN: DocCat -->
+                <td class="{FILE_TD_CLASS}">{FILE_DOCCAT_URL_OPEN}<img src="{THEME}/img/icon_filetype/{FILE_DOCTYPE_IMG}.png" border="0" alt="">{FILE_DOCCAT_URL_CLOSE}</td>
+<!-- END: DocCat -->
 <!-- BEGIN: Name -->
                <td class="{FILE_TD_CLASS}">{FILE_NAME}</td>
 <!-- END: Name -->
@@ -305,6 +317,9 @@
                   </table>
                </td>
 <!-- END: DocFields -->
+<!-- BEGIN: doccat -->
+               <td class="{FILE_TD_CLASS}">{DOC_CATEGORY}</td>
+<!-- END: doccat -->
 <!-- BEGIN: major_minor_revision -->
                <td class="{FILE_TD_CLASS}">{FILE_VERSION}</td>
 <!-- END: major_minor_revision -->

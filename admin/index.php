@@ -2063,6 +2063,7 @@ function printusers()
    $xtpl->assign('BC_STATUS_COLUMN_LABEL', $owl_lang->status_column);
    $xtpl->assign('BC_DOC_NUM_COLUMN_LABEL', $owl_lang->doc_number);
    $xtpl->assign('BC_DOC_ICON_COLUMN_LABEL', $owl_lang->docicon_column);
+   $xtpl->assign('BC_DOC_CAT_COLUMN_LABEL', $owl_lang->document_cat);
    $xtpl->assign('BC_DOC_FIELDS_COLUMN_LABEL', $owl_lang->doc_fields);
    $xtpl->assign('BC_TITLE_COLUMN_LABEL', $owl_lang->title);
    $xtpl->assign('BC_VER_COLUMN_LABEL', $owl_lang->ver);
@@ -2077,6 +2078,7 @@ function printusers()
    $xtpl->assign('BC_EXPAND_DISP_STATUS_CHECKED', fIsCheckBoxChecked($default->expand_disp_status));
    $xtpl->assign('BC_EXPAND_DISP_DOC_NUM_CHECKED', fIsCheckBoxChecked($default->expand_disp_doc_num));
    $xtpl->assign('BC_EXPAND_DISP_DOC_TYPE_CHECKED', fIsCheckBoxChecked($default->expand_disp_doc_type));
+   $xtpl->assign('BC_EXPAND_DISP_DOC_CAT_CHECKED', fIsCheckBoxChecked($default->expand_disp_doc_cat));
    $xtpl->assign('BC_EXPAND_DISP_DOC_FIELDS_CHECKED', fIsCheckBoxChecked($default->expand_disp_doc_fields));
    $xtpl->assign('BC_EXPAND_DISP_TITLE_CHECKED', fIsCheckBoxChecked($default->expand_disp_title));
    $xtpl->assign('BC_EXPAND_DISP_VERSION_CHECKED', fIsCheckBoxChecked($default->expand_disp_version));
@@ -2093,6 +2095,7 @@ function printusers()
    $xtpl->assign('BC_COLLAPSE_DISP_STATUS_CHECKED', fIsCheckBoxChecked($default->collapse_disp_status));
    $xtpl->assign('BC_COLLAPSE_DISP_DOC_NUM_CHECKED', fIsCheckBoxChecked($default->collapse_disp_doc_num));
    $xtpl->assign('BC_COLLAPSE_DISP_DOC_TYPE_CHECKED', fIsCheckBoxChecked($default->collapse_disp_doc_type));
+   $xtpl->assign('BC_COLLAPSE_DISP_DOC_CAT_CHECKED', fIsCheckBoxChecked($default->collapse_disp_doc_cat));
    $xtpl->assign('BC_COLLAPSE_DISP_DOC_FIELDS_CHECKED', fIsCheckBoxChecked($default->collapse_disp_doc_fields));
    $xtpl->assign('BC_COLLAPSE_DISP_TITLE_CHECKED', fIsCheckBoxChecked($default->collapse_disp_title));
    $xtpl->assign('BC_COLLAPSE_DISP_VERSION_CHECKED', fIsCheckBoxChecked($default->collapse_disp_version));
@@ -2113,6 +2116,7 @@ function printusers()
    $xtpl->assign('SR_EXPAND_SEARCH_DISP_FOLDER_PATH_CHECKED', fIsCheckBoxChecked($default->expand_search_disp_folder_path));
    $xtpl->assign('SR_EXPAND_SEARCH_DISP_DOC_NUM_CHECKED', fIsCheckBoxChecked($default->expand_search_disp_doc_num));
    $xtpl->assign('SR_EXPAND_SEARCH_DISP_DOC_TYPE_CHECKED', fIsCheckBoxChecked($default->expand_search_disp_doc_type));
+   $xtpl->assign('SR_EXPAND_SEARCH_DISP_DOC_CAT_CHECKED', fIsCheckBoxChecked($default->expand_search_disp_doc_cat));
    $xtpl->assign('SR_EXPAND_SEARCH_DISP_DOC_FIELDS_CHECKED', fIsCheckBoxChecked($default->expand_search_disp_doc_fields));
    $xtpl->assign('SR_EXPAND_SEARCH_DISP_FILE_CHECKED', fIsCheckBoxChecked($default->expand_search_disp_file));
    $xtpl->assign('SR_EXPAND_SEARCH_DISP_SIZE_CHECKED', fIsCheckBoxChecked($default->expand_search_disp_size));
@@ -2125,6 +2129,7 @@ function printusers()
    $xtpl->assign('SR_COLLAPSE_SEARCH_DISP_FOLDER_PATH_CHECKED', fIsCheckBoxChecked($default->collapse_search_disp_folder_path));
    $xtpl->assign('SR_COLLAPSE_SEARCH_DISP_DOC_NUM_CHECKED', fIsCheckBoxChecked($default->collapse_search_disp_doc_num));
    $xtpl->assign('SR_COLLAPSE_SEARCH_DISP_DOC_TYPE_CHECKED', fIsCheckBoxChecked($default->collapse_search_disp_doc_type));
+   $xtpl->assign('SR_COLLAPSE_SEARCH_DISP_DOC_CAT_CHECKED', fIsCheckBoxChecked($default->collapse_search_disp_doc_cat));
    $xtpl->assign('SR_COLLAPSE_SEARCH_DISP_DOC_FIELDS_CHECKED', fIsCheckBoxChecked($default->colps_search_disp_doc_fields));
    $xtpl->assign('SR_COLLAPSE_SEARCH_DISP_FILE_CHECKED', fIsCheckBoxChecked($default->collapse_search_disp_file));
    $xtpl->assign('SR_COLLAPSE_SEARCH_DISP_SIZE_CHECKED', fIsCheckBoxChecked($default->collapse_search_disp_size));

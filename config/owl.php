@@ -1012,6 +1012,7 @@ $default->max_number_of_file_uploads = 0;
 // BOZZ: default doctype changed to 1 because initial install only has 
 // BOZZ: the one Default doctype
 $default->default_doctype = 1;
+$default->default_doccat = 1;
 $default->default_url_doctype = 1;
   
 // **********************************************************************

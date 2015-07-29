@@ -399,6 +399,7 @@ function getprefs ()
    $default->expand_disp_status = $sql->f("expand_disp_status");
    $default->expand_disp_doc_num = $sql->f("expand_disp_doc_num");
    $default->expand_disp_doc_type = $sql->f("expand_disp_doc_type");
+   $default->expand_disp_doc_cat = $sql->f("expand_disp_doc_cat");
    $default->expand_disp_doc_fields =$sql->f("expand_disp_doc_fields");
    $default->expand_disp_title = $sql->f("expand_disp_title");
    $default->expand_disp_version = $sql->f("expand_disp_version");
@@ -413,6 +414,7 @@ function getprefs ()
    $default->collapse_disp_status = $sql->f("collapse_disp_status");
    $default->collapse_disp_doc_num = $sql->f("collapse_disp_doc_num");
    $default->collapse_disp_doc_type = $sql->f("collapse_disp_doc_type");
+   $default->collapse_disp_doc_cat = $sql->f("collapse_disp_doc_cat");
    $default->collapse_disp_doc_fields =$sql->f("collapse_disp_doc_fields");
    $default->collapse_disp_title = $sql->f("collapse_disp_title");
    $default->collapse_disp_version = $sql->f("collapse_disp_version");
@@ -426,6 +428,7 @@ function getprefs ()
    $default->expand_search_disp_score =  $sql->f("expand_search_disp_score");
    $default->expand_search_disp_folder_path = $sql->f("expand_search_disp_folder_path");
    $default->expand_search_disp_doc_type = $sql->f("expand_search_disp_doc_type");
+   $default->expand_search_disp_doc_cat = $sql->f("expand_search_disp_doc_cat");
    $default->expand_search_disp_doc_fields = $sql->f("expand_search_disp_doc_fields");
    $default->expand_search_disp_file = $sql->f("expand_search_disp_file");
    $default->expand_search_disp_size = $sql->f("expand_search_disp_size");
@@ -439,6 +442,7 @@ function getprefs ()
    $default->collapse_search_disp_score =  $sql->f("collapse_search_disp_score");
    $default->collapse_search_disp_folder_path = $sql->f("colps_search_disp_fld_path");
    $default->collapse_search_disp_doc_type = $sql->f("collapse_search_disp_doc_type");
+   $default->collapse_search_disp_doc_cat = $sql->f("collapse_search_disp_doc_cat");
    $default->colps_search_disp_doc_fields = $sql->f("colps_search_disp_doc_fields");
    $default->collapse_search_disp_file = $sql->f("collapse_search_disp_file");
    $default->collapse_search_disp_size = $sql->f("collapse_search_disp_size");

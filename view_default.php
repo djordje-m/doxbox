@@ -78,7 +78,11 @@
       $xtpl->assign('TITLE_DOCFIELDS', $owl_lang->doc_fields);
       $xtpl->parse('main.DataBlock.Title.DocFields');
    }
-
+   if (($default->expand_disp_doc_cat and $expand == 1) or ($default->collapse_disp_doc_cat and $expand == 0))
+   {
+       //$xtpl->parse('main.DataBlock.Title.DocCat');
+       show_linkXTPL("doc_category", "sortcat", $sortcat, $order, $sess, $expand, $parent, $owl_lang->document_cat);
+   }
    if ($default->owl_version_control == 1)
    {
       if (($default->expand_disp_version and $expand == 1) or ($default->collapse_disp_version and $expand == 0))
@@ -1201,6 +1205,12 @@ while ($sql->next_record())
       fPrintCustomFields ($sql->f("doctype"), $iRealFileID, 0, "visible", "readonly");
       //$xtpl->parse('main.DataBlock.File.DocFields');
    }
+    if (($default->expand_disp_doc_cat and $expand == 1) or ($default->collapse_disp_doc_cat and $expand == 0))
+    {
+        //fPrintCustomFields ($sql->f("doctype"), $iRealFileID, 0, "visible", "readonly");
+        $xtpl->assign('DOC_CATEGORY',$sql->f("doc_category_name"));
+        $xtpl->parse('main.DataBlock.File.doccat');
+    }
 
    if ($default->owl_version_control == 1)
    {

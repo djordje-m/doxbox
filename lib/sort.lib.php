@@ -72,6 +72,10 @@ if (!isset($sortmod) or strlen($sortmod) > 4)
 {
    $sortmod = $default->default_sort_order;
 }
+if (!isset($sortcat) or strlen($sortcat) > 4)
+{
+    $sortcat = $default->default_sort_order;
+}
 if (!isset($sort) or strlen($sort) > 4)
 {
    $sort = $default->default_sort_order;
@@ -95,6 +99,10 @@ switch ($order)
       $sortorder = 'sortver';
       $sort = $sortver;
       break;
+    case "doc_category":
+        $sortorder = 'sortcat';
+        $sort = $sortcat;
+        break;
    case "filename" :
       $sortorder = 'sortfilename';
       $sort = $sortfilename;

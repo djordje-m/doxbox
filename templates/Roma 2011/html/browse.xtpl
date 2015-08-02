@@ -87,6 +87,9 @@
 <!-- BEGIN: DocType -->
                <td class="{FOLDER_TD_CLASS}"><a class="lfile1" href="{FOLDER_DOCTYPE_URL}" title="{FOLDER_DOCTYPE_TITLE}"><img src="{THEME}/icon_filetype/folder_closed.gif" border="0" alt="" /></a></td>
 <!-- END: DocType -->
+<!-- BEGIN: doccat -->
+               <td class="{FOLDER_TD_CLASS}">&nbsp;<br /></td>
+<!-- END: doccat -->
 <!-- BEGIN: Name -->
                <td class="{FOLDER_TD_CLASS}"><a class="folder_name" href="{FOLDER_NAME_URL}" title="{FOLDER_NAME_TITLE}" {FOLDER_NAME_MOUSEOVER}>{FOLDER_NAME_NAME}</a>{FOLDER_NAME_COUNTS}
 <!-- BEGIN: Description -->                  

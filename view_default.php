@@ -357,6 +357,13 @@ while ($sql->next_record())
       $xtpl->assign('FOLDER_DOCTYPE_TITLE', $sAltString);
       $xtpl->parse('main.DataBlock.Folder.DocType');
    }
+
+    if(($default->expand_disp_doc_cat and $expand == 1) or ($default->collapse_disp_doc_cat and $expand == 0))
+    {
+        //$xtpl->assign('FOLDER_DOCTYPE_URL', $url);
+        //$xtpl->assign('FOLDER_DOCTYPE_TITLE', $sAltString);
+        $xtpl->parse('main.DataBlock.Folder.doccat');
+    }
  
 
    if(($default->expand_disp_title and $expand == 1) or ($default->collapse_disp_title and $expand == 0))

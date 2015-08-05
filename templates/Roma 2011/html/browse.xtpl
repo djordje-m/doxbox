@@ -87,12 +87,9 @@
 <!-- BEGIN: DocType -->
                <td class="{FOLDER_TD_CLASS}"><a class="lfile1" href="{FOLDER_DOCTYPE_URL}" title="{FOLDER_DOCTYPE_TITLE}"><img src="{THEME}/icon_filetype/folder_closed.gif" border="0" alt="" /></a></td>
 <!-- END: DocType -->
-<!-- BEGIN: doccat -->
-               <td class="{FOLDER_TD_CLASS}">&nbsp;<br /></td>
-<!-- END: doccat -->
 <!-- BEGIN: Name -->
                <td class="{FOLDER_TD_CLASS}"><a class="folder_name" href="{FOLDER_NAME_URL}" title="{FOLDER_NAME_TITLE}" {FOLDER_NAME_MOUSEOVER}>{FOLDER_NAME_NAME}</a>{FOLDER_NAME_COUNTS}
-<!-- BEGIN: Description -->                  
+<!-- BEGIN: Description -->
                   <div class="desc">{FOLDER_NAME_DESC}</div>
 <!-- END: Description -->
                </td>
@@ -100,6 +97,9 @@
 <!-- BEGIN: DocFields -->
                <td class="{FOLDER_TD_CLASS}">&nbsp;<br /></td>
 <!-- END: DocFields -->
+<!-- BEGIN: doccat -->
+               <td class="{FOLDER_TD_CLASS}">&nbsp;<br /></td>
+<!-- END: doccat -->
 <!-- BEGIN: major_minor_revision -->
                <td class="{FOLDER_TD_CLASS}">&nbsp;<br /></td>
 <!-- END: major_minor_revision -->
@@ -192,7 +192,14 @@
             </tr>
 <!-- END: Folder -->
 
+
+
 <!-- BEGIN: File -->
+<!-- BEGIN: Category -->
+            <tr>
+            <td class="{FILE_TD_CLASS}" colspan="20">{CATEGORY}</td>
+            </tr>
+<!-- END: Category -->
             <tr id="{FILE_TR_ID}" class="{FILE_TR_CLASS}" {FILE_TR_MOUSOVER}>
 <!-- BEGIN: Bulk -->
                <td class="{FILE_TD_CLASS}">{FILE_BULK_CHECKBOX}<br /></td>
@@ -429,15 +436,14 @@
                         <td>{FILE_ACTION_GENTHUMB}</td>
                      </tr>
                   </table>
+
                </td>
 <!-- END: Action -->
 <!-- BEGIN: checked_out -->
                <td class="{FILE_TD_CLASS}">{FILE_CHECKEDOUT}</td>
 <!-- END: checked_out -->
             </tr>
-
 <!-- END: File -->
-
          </table>
 <!-- BEGIN: BulkFormEnd -->
 </form>

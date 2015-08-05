@@ -517,7 +517,8 @@ else
       $sApproved = "and approved = '1'";
    }
 
-   $sLeftJoin2="LEFT OUTER JOIN $default->owl_doccat_table dt ON doc_category = dt.doc_category_id";
+   //$sLeftJoin2="LEFT OUTER JOIN $default->owl_doccat_table dt ON doc_category = dt.doc_category_id";
+
    // Query TO retreive the Files in the current Folder
    $FileQuery = "select * from $default->owl_files_table f $sLeftJoin $sLeftJoin2 where parent = '$parent' order by $order_clause $sLimit";
    $MenuFileQuery = "select * from $default->owl_files_table where parent = '$parent' $sApproved order by $order_clause $sLimit";
@@ -661,7 +662,7 @@ if ($curview == 0)
 {
    if ($default->view_files_then_folders_alpha == 1)
    {
-      require_once ($default->owl_fs_root . "/view_default.php");
+      require_once ($default->owl_fs_root . "/view_default_cat.php");
    }
    else
    {

@@ -798,6 +798,9 @@ if (($default->expand_disp_doc_cat and $expand == 1) or ($default->collapse_disp
 }
 $FileQuery = "select * from $default->owl_files_table f $sLeftJoin $sLeftJoin2 where parent = '$parent' order by $cat_order $order_clause $sLimit";
 
+if ($sTrClass == "") {
+    $sTrClass = "hover2";
+}
 
 $sql->query($FileQuery);
 
@@ -819,6 +822,7 @@ if (($default->expand_disp_doc_cat and $expand == 1) or ($default->collapse_disp
     //else {
     //    $last_cat = $current_cat;
    // if ($last_cat == $current_cat) {
+    $xtpl->assign('FILE_TD_CLASS', $sTrClass);
         $xtpl->assign('FILE_NAME', "<a class=\"$sLfList\" href=\"$url\" onmouseover=" . '"' . sprintf($default->domtt_popup, $owl_lang->description, $sPopupDescription, $default->popup_lifetime) . "\"  title=\"$sAltString: " . $sql->f("filename") . '">' . $sql->f("name"));
         $xtpl->parse('main.DataBlock.File.Name');
 

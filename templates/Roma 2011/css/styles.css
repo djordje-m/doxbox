@@ -1008,6 +1008,12 @@ height:30px;
     vertical-align: middle;
     white-space: nowrap;
 }
+.browse_categories {
+    font-weight:bold;
+    color:#fff;
+    background-color:#002663;
+    height:30px;
+}
 td.hover2 {
     border-color: #6E6E6E #6E6E6E #6E6E6E #FFFFFF;
     border-style: solid;

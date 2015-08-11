@@ -63,12 +63,18 @@
    {
       $xtpl->parse('main.DataBlock.Title.Thumb');
    }
-
+    if (($default->expand_disp_modified and $expand == 1) or ($default->collapse_disp_modified and $expand == 0))
+    {
+        show_linkXTPL("smodified", "sortmod", $sortmod, $order, $sess, $expand, $parent, $owl_lang->modified);
+    }
    if (($default->expand_disp_doc_type and $expand == 1) or ($default->collapse_disp_doc_type and $expand == 0))
    {
       $xtpl->parse('main.DataBlock.Title.DocType');
    }
-   if (($default->expand_disp_title and $expand == 1) or ($default->collapse_disp_title and $expand == 0))
+
+
+
+    if (($default->expand_disp_title and $expand == 1) or ($default->collapse_disp_title and $expand == 0))
    {
       show_linkXTPL("name", "sortname", $sortname, $order, $sess, $expand, $parent, $owl_lang->title);
    }
@@ -113,10 +119,7 @@ TO BE ADDED
    {
       show_linkXTPL("updatorid", "sortupdator", $sortupdator, $order, $sess, $expand, $parent, $owl_lang->updated_by);
    }
-   if (($default->expand_disp_modified and $expand == 1) or ($default->collapse_disp_modified and $expand == 0))
-   {
-      show_linkXTPL("smodified", "sortmod", $sortmod, $order, $sess, $expand, $parent, $owl_lang->modified);
-   }
+
 
    if ((($default->expand_disp_action and $expand == 1) or ($default->collapse_disp_action and $expand == 0)) and $default->old_action_icons)
    {
@@ -827,7 +830,8 @@ if (($default->expand_disp_doc_cat and $expand == 1) or ($default->collapse_disp
 
     if ($current_cat != $last_cat) {
 
-            $xtpl->assign('FILE_TD_CLASS', $sTrClass);
+            //$xtpl->assign('FILE_TD_CLASS', $sTrClass);
+        $xtpl->assign('FILE_TD_CLASS', "browse_categories");
             $xtpl->assign('CATEGORY', $sql->f("doc_category_name"));
             $xtpl->parse('main.DataBlock.File.Category');
 

@@ -25,6 +25,9 @@
 <!-- BEGIN: DocType -->
                <td class="title1">&nbsp;</td>
 <!-- END: DocType -->
+<!-- BEGIN: smodified -->
+               <td class="title1"><a class="ltitle1" href="{TITLE_URL}" title="{TITLE_TITLE}">{TITLE_LABEL}</a>&nbsp;{TITLE_SORT_IMG}<br /></td>
+<!-- END: smodified -->
 <!-- BEGIN: name -->
                <td class="title1" width="50%"><a class="ltitle1" href="{TITLE_URL}" title="{TITLE_TITLE}">{TITLE_LABEL}</a>&nbsp;{TITLE_SORT_IMG}<br /></td>
 <!-- END: name -->
@@ -49,9 +52,7 @@
 <!-- BEGIN: updatorid -->
                <td class="title1"><a class="ltitle1" href="{TITLE_URL}" title="{TITLE_TITLE}">{TITLE_LABEL}</a>&nbsp;{TITLE_SORT_IMG}<br /></td>
 <!-- END: updatorid -->
-<!-- BEGIN: smodified -->
-               <td class="title1"><a class="ltitle1" href="{TITLE_URL}" title="{TITLE_TITLE}">{TITLE_LABEL}</a>&nbsp;{TITLE_SORT_IMG}<br /></td>
-<!-- END: smodified -->
+
 <!-- BEGIN: f_cat -->
                <td class="title1"><a class="ltitle1" href="{TITLE_URL}" title="{TITLE_TITLE}">{TITLE_LABEL}</a>&nbsp;{TITLE_SORT_IMG}<br /></td>
 <!-- END: f_cat -->
@@ -87,6 +88,9 @@
 <!-- BEGIN: DocType -->
                <td class="{FOLDER_TD_CLASS}"><a class="lfile1" href="{FOLDER_DOCTYPE_URL}" title="{FOLDER_DOCTYPE_TITLE}"><img src="{THEME}/icon_filetype/folder_closed.gif" border="0" alt="" /></a></td>
 <!-- END: DocType -->
+<!-- BEGIN: smodified -->
+               <td class="{FOLDER_TD_CLASS}">{FOLDER_MODIFIED}</td>
+<!-- END: smodified -->
 <!-- BEGIN: Name -->
                <td class="{FOLDER_TD_CLASS}"><a class="folder_name" href="{FOLDER_NAME_URL}" title="{FOLDER_NAME_TITLE}" {FOLDER_NAME_MOUSEOVER}>{FOLDER_NAME_NAME}</a>{FOLDER_NAME_COUNTS}
 <!-- BEGIN: Description -->
@@ -154,9 +158,7 @@
 <!-- BEGIN: updatorid -->
                <td class="{FOLDER_TD_CLASS}">&nbsp;</td>
 <!-- END: updatorid -->
-<!-- BEGIN: smodified -->
-               <td class="{FOLDER_TD_CLASS}">{FOLDER_MODIFIED}</td>
-<!-- END: smodified -->
+
 <!-- BEGIN: f_cat -->
                <td class="{FOLDER_TD_CLASS}">{FOLDER_CAT}</td>
 <!-- END: f_cat -->
@@ -231,6 +233,9 @@
 <!-- BEGIN: DocCat -->
                 <td class="{FILE_TD_CLASS}">{FILE_DOCCAT_URL_OPEN}<img src="{THEME}/img/icon_filetype/{FILE_DOCTYPE_IMG}.png" border="0" alt="">{FILE_DOCCAT_URL_CLOSE}</td>
 <!-- END: DocCat -->
+<!-- BEGIN: smodified -->
+               <td class="{FILE_TD_CLASS}">{FILE_MODIFIED}</td>
+<!-- END: smodified -->
 <!-- BEGIN: Name -->
                <td class="{FILE_TD_CLASS}">{FILE_NAME}</td>
 <!-- END: Name -->
@@ -409,9 +414,7 @@
 <!-- BEGIN: updatorid -->
                <td class="{FILE_TD_CLASS}">{FILE_UPDATOR}</td>
 <!-- END: updatorid -->
-<!-- BEGIN: smodified -->
-               <td class="{FILE_TD_CLASS}">{FILE_MODIFIED}</td>
-<!-- END: smodified -->
+
 <!-- BEGIN: Action -->
                <td class="{FILE_TD_CLASS}">
                   <table cellspacing="2" cellpadding="0" border="0">
